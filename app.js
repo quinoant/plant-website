@@ -4,10 +4,25 @@ const app = express();
 //First Level
 
 // GET /users
+app.get('/users', async (req,res) => {
+    //code
+})
 // GET /users/:id
+app.get('/users/:id', async (req,res) => {
+    //code
+})
 // POST /users
+app.post('/users', async (req,res) => {
+    //code
+})
 // PUT /users/:id
+app.put('/users/:id', async (req,res) => {
+    //code
+})
 // DELETE /users/:id
+app.delete('/users/:id', async (req,res) => {
+    //code
+})
 
 //Second Level(Plants)
 
