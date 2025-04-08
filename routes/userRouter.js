@@ -1,6 +1,6 @@
 
 import express from 'express';
-import { getAllUsersController,getUserByIdController } from '../controllers/userController.js';
+import { deleteUserController,updateUserController,getAllUsersController,getUserByIdController,createNewUserController } from '../controllers/userController.js';
 
 //First Level
 const router = express.Router();
@@ -11,19 +11,13 @@ router.get('/', getAllUsersController)
 router.get('/:id', getUserByIdController)
 
 // POST /users
-router.post('/users', async (req,res) => {
-    //code
-})
+router.post('/', createNewUserController)
 
 // PUT /users/:id
-router.put('/users/:id', async (req,res) => {
-    //code
-})
+router.put('/:id', updateUserController)
 
 // DELETE /users/:id
-router.delete('/users/:id', async (req,res) => {
-    //code
-})
+router.delete('/:id', deleteUserController)
 
 //Second Level(Plants)
 

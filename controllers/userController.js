@@ -1,5 +1,5 @@
 
-import { getAllUsers, getUserById } from '../services/userService.js';
+import { deleteUser,createNewUser, getAllUsers, getUserById,updateUser } from '../services/userService.js';
 
 async function getAllUsersController(req,res,next){
     try{
@@ -19,7 +19,37 @@ async function getUserByIdController(req,res,next){
     }
 }
 
+async function createNewUserController(req,res,next){
+    try{
+        const user = createNewUser(req.body);
+        res.status(201).json(user);
+    }catch(error){
+        next(error);
+    }
+}
+
+async function updateUserController(req,res,next){
+    try{
+        const updatedUser = await updateUser(req.params.id, req.body);
+        res.status(200).json(updatedUser);
+    }catch(error){
+        next(error)
+    }
+}
+
+async function deleteUserController(req,res,next){
+    try{
+        await deleteUser(req.params.id);
+        res.status(204).end();
+    }catch(error){
+        next(error)
+    }
+}
+
 export{
     getAllUsersController,
-    getUserByIdController
+    getUserByIdController,
+    createNewUserController,
+    updateUserController,
+    deleteUserController
 }

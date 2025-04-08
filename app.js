@@ -4,7 +4,7 @@ import userRouter from './routes/userRouter.js';
 
 const app = express();
 //First Level
-
+app.use(express.json());
 app.use('/users',userRouter)
 
 app.use((error,req,res,next) => {
