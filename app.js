@@ -1,45 +1,19 @@
 import express from 'express';
-import { readData } from './helpers';
+import userRouter from './routes/userRouter.js';
+
 
 const app = express();
 //First Level
 
-// GET /users
-app.get('/users', async (req,res) => {
-    const results = await readData();
-    response.status(200).json(results);
-})
+app.use('/users',userRouter)
 
-// GET /users/:id
-app.get('/users/:id', async (req,res) => {
-    //code
-})
-
-// POST /users
-app.post('/users', async (req,res) => {
-    //code
-})
-
-// PUT /users/:id
-app.put('/users/:id', async (req,res) => {
-    //code
-})
-
-// DELETE /users/:id
-app.delete('/users/:id', async (req,res) => {
-    //code
-})
-
-//Second Level(Plants)
-
-// GET    /users/:id/plants
-// GET    /users/:id/plants/:id
-// POST   /users/:id/plants
-// PUT    /users/:id/plants/:id
-// DELETE /users/:id/plants/:id
-
-app.get('/', (req,res) => {
-    res.send("Hello From Express");
+app.use((error,req,res,next) => {
+    console.error(error);
+    if(error.message === "notfound"){
+        return res.status(404).json({error: "User not found"})
+    }else{
+        return res.status(500).json({error: "Something went wrong!"})
+    }
 })
 
 app.listen(3000, () => {
