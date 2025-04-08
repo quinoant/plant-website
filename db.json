@@ -1,0 +1,28 @@
+[
+    {
+        "id":"1",
+        "username":"circleman",
+        "password":"circleWorld111",
+        "plants"  :{
+                    "id"       :"1",
+                    "species"  :"Fern",
+                    "age"      :"3mo",
+                    "water_req":"weekly",
+                    "sun_req"  :"shade"
+                   }
+
+    },
+    {
+        "id":"2",
+        "username":"squareman",
+        "password":"squareWorld111",
+        "plants"  :{
+                    "id"       :"1",
+                    "species"  :"Orchid",
+                    "age"      :"1mo",
+                    "water_req":"daily",
+                    "sun_req"  :"Full"
+                   }
+
+    }
+]
