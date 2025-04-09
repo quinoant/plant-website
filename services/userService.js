@@ -66,7 +66,6 @@ async function createNewPlant(uid, plant){
     const newPid = await generateUniqueId();
     const newPlant = {id: newPid, ...plant};
     user.plants.push(newPlant);
-    console.log(user);
     await updateUser(uid, user);
     return user;
 }
@@ -77,7 +76,6 @@ async function updatePlant(uid, newPlantData,pid){
 
     if(index !== -1){
         user.plants[index] = { id: user.plants[index].id, ...newPlantData};
-        console.log(user)
         await updateUser(uid,user);
         return user.plants[index];
     }else{
