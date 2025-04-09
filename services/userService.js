@@ -72,7 +72,7 @@ async function createNewPlant(uid, plant){
 }
 
 async function updatePlant(uid, newPlantData,pid){
-    const user = await getUserById(uid);
+    let user = await getUserById(uid);
     const index = user.plants.findIndex(plant => plant.id === pid);
 
     if(index !== -1){
@@ -85,6 +85,17 @@ async function updatePlant(uid, newPlantData,pid){
     }
 }
 
+async function deletePlant(uid,pid){
+    let user = await getUserById(uid);
+    const originalLength = user.plants.length;
+    user.plants = user.plants.filter(plant => plant.id !== pid);
+
+    if(user.plants.length === originalLength){
+        throw new Error('notfound');
+    }
+    await updateUser(uid,user);
+}
+
 export{
     getUserById,
     getAllUsers,
@@ -94,5 +105,6 @@ export{
     getAllPlantsByUserId,
     getSpecificPlantByUserId,
     createNewPlant,
-    updatePlant
+    updatePlant,
+    deletePlant
 }

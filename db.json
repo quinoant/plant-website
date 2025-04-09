@@ -10,13 +10,6 @@
         "age": "1000yrs",
         "water_req": "rain",
         "sun_req": "direct"
-      },
-      {
-        "id": "4c7e8344-316a-4530-9f80-3564d76efdbf",
-        "species": "Orchid",
-        "age": "1yrs",
-        "water_req": "1wk",
-        "sun_req": "shade"
       }
     ]
   },
