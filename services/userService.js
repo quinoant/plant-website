@@ -49,6 +49,16 @@ async function getAllPlantsByUserId(id){
     const user = await getUserById(id);
     return user.plants;
 }
+// id is user id 
+// pid is plant id
+async function getSpecificPlantByUserId(id,pid){
+    const user = await getUserById(id);
+    const plant = user.plants.find(plant => plant.id === pid);
+    if(!plant){
+        throw new Error('notfound')
+    }
+    return plant;
+}
 
 export{
     getUserById,
@@ -56,5 +66,6 @@ export{
     createNewUser,
     updateUser,
     deleteUser,
-    getAllPlantsByUserId
+    getAllPlantsByUserId,
+    getSpecificPlantByUserId
 }

@@ -9,6 +9,12 @@
       "age": "3mo",
       "water_req": "weekly",
       "sun_req": "shade"
+    },{
+      "id": "2",
+      "species": "Pine Tree",
+      "age": "3yrs",
+      "water_req": "rain",
+      "sun_req": "direct"
     }]
   },
   {
