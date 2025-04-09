@@ -21,7 +21,6 @@ async function createNewUser(user){
     return newUser;
 }
 
-//NOT WORKING
 async function updateUser(id, newUserData){
     let users = await readData();
     const index = users.findIndex(user => user.id === id);
@@ -72,6 +71,20 @@ async function createNewPlant(uid, plant){
     return user;
 }
 
+async function updatePlant(uid, newPlantData,pid){
+    const user = await getUserById(uid);
+    const index = user.plants.findIndex(plant => plant.id === pid);
+
+    if(index !== -1){
+        user.plants[index] = { id: user.plants[index].id, ...newPlantData};
+        console.log(user)
+        await updateUser(uid,user);
+        return user.plants[index];
+    }else{
+        throw new Error('notfound')
+    }
+}
+
 export{
     getUserById,
     getAllUsers,
@@ -80,5 +93,6 @@ export{
     deleteUser,
     getAllPlantsByUserId,
     getSpecificPlantByUserId,
-    createNewPlant
+    createNewPlant,
+    updatePlant
 }
