@@ -3,30 +3,66 @@
     "id": "1",
     "username": "circleman",
     "password": "circleWorld111",
-    "plants": [{
-      "id": "1",
-      "species": "Fern",
-      "age": "3mo",
-      "water_req": "weekly",
-      "sun_req": "shade"
-    },{
-      "id": "2",
-      "species": "Pine Tree",
-      "age": "3yrs",
-      "water_req": "rain",
-      "sun_req": "direct"
-    }]
+    "plants": [
+      {
+        "id": "1",
+        "species": "Fern",
+        "age": "3mo",
+        "water_req": "weekly",
+        "sun_req": "shade"
+      },
+      {
+        "id": "2",
+        "species": "Pine Tree",
+        "age": "3yrs",
+        "water_req": "rain",
+        "sun_req": "direct"
+      },
+      {
+        "id": "4f613916-6c6b-4b6e-a477-2a632d3ed096",
+        "species": "Grape Vine",
+        "age": "1day",
+        "water_req": "bi-weekly",
+        "sun_req": "direct"
+      }
+    ]
   },
   {
     "id": "37fd6997-c936-4b1d-887b-0e4d9729cde5",
     "username": "boneman",
     "password": "boneWorld111",
-    "plants": [{
+    "plants": [
+      {
+        "id": "1",
+        "species": "boneplant",
+        "age": "1000yrs",
+        "water_req": "never",
+        "sun_req": "darkness"
+      }
+    ]
+  },
+  {
+    "id": "3af02b74-7930-4376-96e1-38166183d9f5",
+    "username": "boneman2",
+    "password": "boneWorld111",
+    "plants": {
       "id": "1",
       "species": "boneplant",
       "age": "1000yrs",
       "water_req": "never",
       "sun_req": "darkness"
-    }]
+    }
+  },
+  {
+    "id": "2bbf2d90-a494-43a9-bcf8-9b92cd32d380",
+    "username": "boneman3",
+    "password": "boneWorld111",
+    "plants": {
+      "id": "1",
+      "species": "boneplant",
+      "age": "1000yrs",
+      "water_req": "never",
+      "sun_req": "darkness"
+    }
   }
 ]

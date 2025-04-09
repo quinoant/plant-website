@@ -1,6 +1,6 @@
 
 import express from 'express';
-import { getAllPlantsByUserIdController,deleteUserController,updateUserController,getAllUsersController,getUserByIdController,createNewUserController,getSpecificPlantByUserIdController } from '../controllers/userController.js';
+import { getAllPlantsByUserIdController,deleteUserController,updateUserController,getAllUsersController,getUserByIdController,createNewUserController,getSpecificPlantByUserIdController,createNewPlantController } from '../controllers/userController.js';
 
 //First Level
 const router = express.Router();
@@ -26,13 +26,13 @@ router.get('/:id/plants', getAllPlantsByUserIdController)
 // GET plants by ID
 router.get('/:id/plants/:pid', getSpecificPlantByUserIdController)
 
-// POST a plant
-router.post('/:id/plants', createNewUserController)
+// POST a plant TODO
+router.post('/:id/plants', createNewPlantController)
 
-// PUT(Update) a plant
+// PUT(Update) a plant TODO
 router.put('/:id/plants/:pid', updateUserController)
 
-// DELETE a plant
+// DELETE a plant TODO
 router.delete('/:id/plants/:pid', deleteUserController)
 
 export default router;

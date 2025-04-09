@@ -21,13 +21,14 @@ async function createNewUser(user){
     return newUser;
 }
 
+//NOT WORKING
 async function updateUser(id, newUserData){
     let users = await readData();
     const index = users.findIndex(user => user.id === id);
 
     if(index !== -1){
         users[index] = { id: users[index].id, ...newUserData};
-        await writeData[users];
+        await writeData(users);
         return users[index];
     }else{
         throw new Error('notfound')
@@ -59,6 +60,17 @@ async function getSpecificPlantByUserId(id,pid){
     }
     return plant;
 }
+// plant is json plant to be created
+// id is the id of the user that owns the plant
+async function createNewPlant(uid, plant){
+    const user = await getUserById(uid);
+    const newPid = await generateUniqueId();
+    const newPlant = {id: newPid, ...plant};
+    user.plants.push(newPlant);
+    console.log(user);
+    await updateUser(uid, user);
+    return user;
+}
 
 export{
     getUserById,
@@ -67,5 +79,6 @@ export{
     updateUser,
     deleteUser,
     getAllPlantsByUserId,
-    getSpecificPlantByUserId
+    getSpecificPlantByUserId,
+    createNewPlant
 }
