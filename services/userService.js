@@ -45,10 +45,16 @@ async function deleteUser(id){
     await writeData(users);
 }
 
+async function getAllPlantsByUserId(id){
+    const user = await getUserById(id);
+    return user.plants;
+}
+
 export{
     getUserById,
     getAllUsers,
     createNewUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    getAllPlantsByUserId
 }

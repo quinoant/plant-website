@@ -1,5 +1,5 @@
 
-import { deleteUser,createNewUser, getAllUsers, getUserById,updateUser } from '../services/userService.js';
+import { getAllPlantsByUserId,deleteUser,createNewUser, getAllUsers, getUserById,updateUser } from '../services/userService.js';
 
 async function getAllUsersController(req,res,next){
     try{
@@ -46,10 +46,21 @@ async function deleteUserController(req,res,next){
     }
 }
 
+async function getAllPlantsByUserIdController(req,res,next){
+    try{
+        const results = await getAllPlantsByUserId(req.params.id);
+        console.log("getting plants");
+        res.status(200).json(results);
+    }catch(error){
+        next(error)
+    }
+}
+
 export{
     getAllUsersController,
     getUserByIdController,
     createNewUserController,
     updateUserController,
-    deleteUserController
+    deleteUserController,
+    getAllPlantsByUserIdController
 }

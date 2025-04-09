@@ -3,24 +3,24 @@
     "id": "1",
     "username": "circleman",
     "password": "circleWorld111",
-    "plants": {
+    "plants": [{
       "id": "1",
       "species": "Fern",
       "age": "3mo",
       "water_req": "weekly",
       "sun_req": "shade"
-    }
+    }]
   },
   {
     "id": "37fd6997-c936-4b1d-887b-0e4d9729cde5",
     "username": "boneman",
     "password": "boneWorld111",
-    "plants": {
+    "plants": [{
       "id": "1",
       "species": "boneplant",
       "age": "1000yrs",
       "water_req": "never",
       "sun_req": "darkness"
-    }
+    }]
   }
 ]
